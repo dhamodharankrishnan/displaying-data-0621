@@ -3,9 +3,9 @@
 <div>
     <h1>Property Binding with Angular</h1>
     <h2>Binding the src property of an image:</h2>
-    <img [src]="itemImageUrl">
+    <img [src]="itemImageUrl" width="100" height="100">
     <h2>Using bind- syntax:</h2>
-    <img bind-src="itemImageUrl">
+    <img bind-src="itemImageUrl" width="100" height="100">
     <hr />
   
     <h2>Binding to the colSpan property</h2>
@@ -21,7 +21,6 @@
     <!-- Bind button disabled state to `isUnchanged` property -->
     <button [disabled]="isUnchanged">Disabled Button</button>
     <hr />
-  
     <h2>Binding to a property of a directive</h2>
     <p [ngClass]="classes">[ngClass] binding to the classes property making this blue</p>
     <hr />
@@ -32,7 +31,7 @@
   
     <h3>Pass objects:</h3>
     <app-item-list [items]="currentItems"></app-item-list>
-  
+<!--  
     <hr />
     <h2>Initialized string:</h2>
     <app-string-init prefix="This is a one-time initialized string."></app-string-init>
@@ -51,7 +50,7 @@
     <h2>Malicious content</h2>
   
     <p><span>"{{evilTitle}}" is the <i>interpolated</i> evil title.</span></p>
-  
+  -->
     <!--
     Angular generates a warning for the following line as it sanitizes them
     WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).
