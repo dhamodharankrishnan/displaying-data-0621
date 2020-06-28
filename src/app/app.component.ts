@@ -24,9 +24,15 @@ import { Hero } from './hero';
        Phone : {{ hero.phoneNumber }}
     </li>
   </ul>
+    <img [src]="itemImageUrl2" width="300" height="200">
+    <div class="special">Plain old HTML</div>
+    <img src="assets/ComputerChair.png" width="50" height="50">
+    <button id="saveButton" [disabled]="isUnchanged">Save</button>
+    <button id="toggleButton" (click)="toggleSaveButton()">Toggle Save</button>
     `
 })
 export class AppComponent {
+  itemImageUrl2: string;
   title: string;
   myHero: Hero;
   heroes = [
@@ -34,11 +40,14 @@ export class AppComponent {
     new Hero(13, 'Bombasto', 1234567890),
     new Hero(15, 'Magneta', 939783498)
   ];
+  isUnchanged: boolean;
 filteredHeroes = [];
 
   constructor() {
     this.title = 'Tour of Heroes';
     this.myHero = this.heroes[0];
+    this.itemImageUrl2 = '../assets/ComputerChair.png';
+    this.isUnchanged = false;
   }
 
   getVal() {
@@ -58,6 +67,10 @@ filteredHeroes = [];
     });
     console.log(' After filtering ', this.heroes);
 
+  }
+
+  toggleSaveButton(){
+    this.isUnchanged = !this.isUnchanged;
   }
 }
 
